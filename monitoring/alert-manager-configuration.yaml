@@ -1,0 +1,17 @@
+apiVersion: monitoring.coreos.com/v1alpha1
+kind: AlertmanagerConfig
+metadata:
+  name: main-rules-alert-config
+  namespace: monitoring
+spec:
+  receivers:
+  - name: 'email'
+    emailConfigs:
+    - to: 'harshwardhan.patil22@vit.edu'
+      from: 'harshwardhan.patil22@vit.edu'
+      smarthost: 'smtp.gmail.com:587'
+      authUsername: 'harshwardhan.patil22@vit.edu'
+      authIdentity: 'harshwardhan.patil22@vit.edu'
+      authPassword:
+        name: gmail-auth
+        key: password
